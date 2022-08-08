@@ -39,16 +39,16 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val ceil = kotlin.math.ceil(vatTotal)
-        val totalFormating = NumberFormat.getCurrencyInstance().format(vatTotal)
-        val totalFormatingCeli = NumberFormat.getCurrencyInstance().format(ceil)
         val switchChecked = binging.switchRoundUp.isChecked
 
-        if (switchChecked) {
-            binging.txtCostTotal.text = getString(R.string.total_format_celi, totalFormatingCeli)
-        } else {
-            binging.txtCostTotal.text = getString(R.string.total_format, totalFormating)
-        }
+        val total = if (switchChecked) {
 
+            kotlin.math.ceil(vatTotal)
+        } else {
+
+            vatTotal
+        }
+        val totalFormating = NumberFormat.getCurrencyInstance().format(total)
+        binging.txtCostTotal.text = getString(R.string.total_format, totalFormating)
     }
 }
