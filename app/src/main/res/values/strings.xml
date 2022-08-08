@@ -7,4 +7,6 @@
     <string name="_20">20%</string>
     <string name="round_up_total">Round Up Total??</string>
     <string name="calculate_vat">Calculate VAT</string>
+    <string name="total_format">Total Price : %s</string>
+    <string name="total_format_celi">Total Price : %s</string>
 </resources>

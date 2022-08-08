@@ -24,11 +24,7 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <RadioGroup
-        android:id="@+id/rg_vat_options"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+
 
         <RadioGroup
             android:id="@+id/rg_vat_option"
@@ -56,7 +52,7 @@
         </RadioGroup>
 
 
-    </RadioGroup>
+
 
 <androidx.appcompat.widget.SwitchCompat
     android:id="@+id/switch_round_up"
