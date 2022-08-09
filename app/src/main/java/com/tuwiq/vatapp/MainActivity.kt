@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val getTextCost = binging.edTotalCost.text.toString()
         val cost = getTextCost.toDouble()
 
-        var vatTotal = when (binging.rgVatOption.checkedRadioButtonId) {
+        var total = when (binging.rgVatOption.checkedRadioButtonId) {
             R.id.rb_vat_10 -> cost * 1.10
             R.id.rb_vat_15 -> cost * 1.15
             else -> cost * 1.20
@@ -41,14 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         val switchChecked = binging.switchRoundUp.isChecked
 
-        val total = if (switchChecked) {
-
-            kotlin.math.ceil(vatTotal)
-        } else {
-
-            vatTotal
-        }
-        val totalFormating = NumberFormat.getCurrencyInstance().format(total)
-        binging.txtCostTotal.text = getString(R.string.total_format, totalFormating)
+       if (switchChecked) {
+           total = kotlin.math.ceil(total)
+       }
+        val totalFormatting = NumberFormat.getCurrencyInstance().format(total)
+        binging.txtCostTotal.text = getString(R.string.total_format, totalFormatting)
     }
 }
