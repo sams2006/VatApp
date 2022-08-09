@@ -9,12 +9,26 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/ed_total_cost"
+<!--    <EditText-->
+<!--        android:id="@+id/ed_total_cost"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/cost_or_total_price"-->
+<!--        android:inputType="numberDecimal" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/cost_or_total_price"
-        android:inputType="numberDecimal" />
+        android:hint="@string/cost_or_total_price">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_total_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textColor="@color/primaryTextColor"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,15 +72,20 @@
     android:id="@+id/switch_round_up"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/dark"
     android:text="@string/round_up_total"/>
 
-    <Button
+<!--    <Button-->
+<!--        android:id="@+id/btn_calculate_vat"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/dark"-->
+<!--        android:text="@string/calculate_vat" />-->
+    
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_calculate_vat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark"
-        android:text="@string/calculate_vat" />
+        android:text="@string/calculate_vat"/>
 
     <TextView
         android:id="@+id/txt_cost_total"
